@@ -115,7 +115,7 @@ public class DataSet {
 
             new DataSet(9, "Ivy", 31, "HR", 52000), 
 
-            new DataSet(10, "Jack", 25, "IT", 47000), 
+            new DataSet(10, "Jack", 25, "IT", 30000), 
 
             new DataSet(9, "Ivy", 31, "HR", 52000), 
 
@@ -367,6 +367,15 @@ public class DataSet {
         dataset2.parallelStream().unordered().forEach(System.out::println);
     }
 
+    public static void takeWhileDemo(){
+        log("takeWhile custom demo"); 
+        List<Integer> list = DataSet.getNumbers(); 
+        List<DataSet> dataset2 = DataSet.getEmployees();
+        list.stream().takeWhile(n-> n<5).forEach(System.out::println);
+        log("takeWhile object demo");
+        dataset2.stream().takeWhile(emp-> emp.getSalary() > 30000).forEach(System.out::println);
+    }
+
     // ? Demo main 
 
     public static void main(String[] args) { 
@@ -393,7 +402,9 @@ public class DataSet {
 
         DataSet.asDoubleStreamDemo();
 
-        Dataset.unorderedDemo();
+        DataSet.unorderedDemo();
+
+        DataSet.takeWhileDemo();
 
     } 
 
