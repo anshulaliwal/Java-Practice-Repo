@@ -1,0 +1,12 @@
+import java.util.*;
+import java.util.stream.*;
+class Solution {
+    public static void lastElement(){
+        int[] arr = {20,30,50,10,60,99};
+        int size = arr.length;
+        Arrays.stream(arr).skip(size-1).findFirst().ifPresent(System.out::println);   
+    }
+    public static void main(String[] args) {
+        lastElement();
+    }
+}
